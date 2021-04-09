@@ -8,3 +8,8 @@
 5.	Lakukan kompilasi / debugging untuk menjalankan program.
 
 NB: Untuk menggunakan fitur Covid-19 API, pastikan komputer terhubung dengan internet.
+
+
+#### Tangkapan Layar
+<img src="https://raw.githubusercontent.com/JovianReynaldo/Covinfo/master/Screenshot.PNG" />
+
