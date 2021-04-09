@@ -1,7 +1,7 @@
 # Covinfo
 
 ### Petunjuk Instalasi / Penggunaan
-1.	Download Source code dari tautan github dibawah.
+1.	Download Source code dari tautan github.
 2.	Pastikan SQL Server telah berjalan dan lakukan Import file database.sql ke dalam SQL Server yang berjalan di localhost.
     Untuk melakukan import, cukup buka file database.sql menggunakan SSMS dan jalankan script dengan Tool Executes.
 3.	Kemudian atur konfigurasi konektivitas database pada file Model.cs.
