@@ -1,6 +1,6 @@
-## Covinfo
+# Covinfo
 
-#### Petunjuk Instalasi / Penggunaan
+### Petunjuk Instalasi / Penggunaan
 1.	Download Source code dari tautan github dibawah.
 2.	Pastikan SQL Server telah berjalan dan lakukan Import file database.sql ke dalam SQL Server yang berjalan di localhost.
     Untuk melakukan import, cukup buka file database.sql menggunakan SSMS dan jalankan script dengan Tool Executes.
@@ -10,7 +10,13 @@
 
 NB: Untuk menggunakan fitur Covid-19 API, pastikan komputer terhubung dengan internet.
 
+<br >
 
-#### Tangkapan Layar
+### Tangkapan Layar
 <img src="https://raw.githubusercontent.com/JovianReynaldo/Covinfo/master/Screenshot.PNG" />
+
+<br >
+
+### Resources
+- https://github.com/mathdroid/covid-19-api
 
