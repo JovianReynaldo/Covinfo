@@ -13,6 +13,7 @@ NB: Untuk menggunakan fitur Covid-19 API, pastikan komputer terhubung dengan int
 <br >
 
 ### Tangkapan Layar
+##### Menu Utama
 <img src="https://raw.githubusercontent.com/JovianReynaldo/Covinfo/master/Screenshot.PNG" />
 
 ##### Fitur Covid-19 API
