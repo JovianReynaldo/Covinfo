@@ -15,6 +15,16 @@ NB: Untuk menggunakan fitur Covid-19 API, pastikan komputer terhubung dengan int
 ### Tangkapan Layar
 <img src="https://raw.githubusercontent.com/JovianReynaldo/Covinfo/master/Screenshot.PNG" />
 
+##### Fitur Covid-19 API
+<img src="https://raw.githubusercontent.com/JovianReynaldo/Covinfo/master/Screenshot1.PNG" />
+
+##### Fitur CovBot
+<img src="https://raw.githubusercontent.com/JovianReynaldo/Covinfo/master/Screenshot2.PNG" />
+
+##### Fitur AdminPanel
+<img src="https://raw.githubusercontent.com/JovianReynaldo/Covinfo/master/Screenshot3.PNG" />
+
+<br >
 <br >
 
 ### Resources
