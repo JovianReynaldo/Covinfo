@@ -23,6 +23,9 @@ NB: Untuk menggunakan fitur Covid-19 API, pastikan komputer terhubung dengan int
 <img src="https://raw.githubusercontent.com/JovianReynaldo/Covinfo/master/Screenshot2.PNG" />
 
 ##### Fitur AdminPanel
+default:
+username: admin
+password: 123
 <img src="https://raw.githubusercontent.com/JovianReynaldo/Covinfo/master/Screenshot3.PNG" />
 
 <br >
