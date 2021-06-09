@@ -5,13 +5,13 @@ namespace Covinfo.Action
 {
     class ActionAdmin : Action
     {
-        public static bool adminStatus { get; set; }
+        public static bool AdminStatus { get; set; }
         public void LoginAdmin()
         {
             Model model = new Model();
-            Boolean loop = true;
+            bool loop = true;
 
-            while (!adminStatus && loop)
+            while (!AdminStatus && loop)
             {
                 Console.Clear();
                 Console.WriteLine("Masuk sebagai admin");
@@ -19,45 +19,54 @@ namespace Covinfo.Action
                 string username = Console.ReadLine();
                 
                 Console.Write("password: ");
-                string password  = Console.ReadLine();
+                string password = Console.ReadLine();
 
-                adminStatus = model.Login(username, password);
-                if (!adminStatus)
+                AdminStatus = model.Login(username, password);
+                if (!AdminStatus)
                 {
-                    while (true) { 
+                    while (true)
+                    {
                         Console.Write("Incorrect, try again? (Y/N): ");
                         string option = Console.ReadLine().ToUpper();
 
-                        if (option == "N") goto exit;
-                        else if (option == "Y") break;
+                        if (option == "N")
+                        {
+                            goto exit;
+                        }
+                        else if (option == "Y")
+                        {
+                            break;
+                        }
                     }
-                } else
+                }
+                else
                 {
                     Program.MenuAdmin();
                     break;
                 }
             }
 
-            exit:;
+        exit:;
         }
 
         public void LogoutAdmin()
         {
-            adminStatus = false;
+            AdminStatus = false;
         }
 
         public void GetInformation()
         {
-            try { 
+            try
+            {
                 Model model = new Model();
                 List<FAQ> listData = model.GetAllFAQ();
 
-                foreach(FAQ data in listData)
+                foreach (FAQ data in listData)
                 {
-                    Console.WriteLine("id: "+data.id);
-                    Console.WriteLine("keyword: "+data.keyword);
-                    Console.WriteLine("head: "+data.head);
-                    Console.WriteLine("body: \n" + data.body);
+                    Console.WriteLine("id: " + data.Id);
+                    Console.WriteLine("keyword: " + data.Keyword);
+                    Console.WriteLine("head: " + data.Head);
+                    Console.WriteLine("body: \n" + data.Body);
                     Console.WriteLine();
                 }
                 Console.WriteLine("\n\nSelesai");
@@ -66,12 +75,13 @@ namespace Covinfo.Action
             {
                 Console.WriteLine(e.Message);
             }
-            Console.ReadLine();
+            _ = Console.ReadLine();
         }
 
         public void NewInformation()
         {
-            try { 
+            try
+            {
                 Console.Write("keyword: ");
                 string keyword = Console.ReadLine();
 
@@ -89,7 +99,7 @@ namespace Covinfo.Action
             {
                 Console.WriteLine(e.Message);
             }
-            Console.ReadLine();
+            _ = Console.ReadLine();
         }
 
         public void EditInformation()
@@ -102,12 +112,13 @@ namespace Covinfo.Action
                 Model model = new Model();
                 FAQ data = model.GetFAQbyId(id);
 
-                if (data != null) { 
+                if (data != null)
+                {
                     Console.Clear();
-                    Console.WriteLine("id: " + data.id);
-                    Console.WriteLine("keyword: " + data.keyword);
-                    Console.WriteLine("head: " + data.head);
-                    Console.WriteLine("body: \n"+ data.body + "\n\n");
+                    Console.WriteLine("id: " + data.Id);
+                    Console.WriteLine("keyword: " + data.Keyword);
+                    Console.WriteLine("head: " + data.Head);
+                    Console.WriteLine("body: \n" + data.Body + "\n\n");
 
                     Console.WriteLine("New Data: ");
 
@@ -118,7 +129,7 @@ namespace Covinfo.Action
                     Console.Write("body: ");
                     string body = Console.ReadLine();
 
-                    model.EditFAQ(keyword, head, body, data.id);
+                    model.EditFAQ(keyword, head, body, data.Id);
                     Console.WriteLine("\n\n Success");
                 }
             }
@@ -127,7 +138,7 @@ namespace Covinfo.Action
                 Console.WriteLine(e.Message);
             }
 
-            Console.ReadLine();
+            _ = Console.ReadLine();
         }
 
         public void DeleteInformation()
@@ -145,7 +156,7 @@ namespace Covinfo.Action
             {
                 Console.WriteLine(e.Message);
             }
-            Console.ReadLine();
+            _ = Console.ReadLine();
         }
     }
 }

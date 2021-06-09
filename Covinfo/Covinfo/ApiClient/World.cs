@@ -19,7 +19,8 @@ namespace Covinfo.ApiClient
                     HttpContent content = response.Content;
                     string json = await content.ReadAsStringAsync();
                     result = JsonConvert.DeserializeObject<Response>(json);
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                 }
