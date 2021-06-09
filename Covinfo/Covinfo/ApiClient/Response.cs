@@ -2,13 +2,13 @@
 {
     class Response
     {
-        public ResponseData confirmed { get; set; }
-        public ResponseData recovered { get; set; }
-        public ResponseData deaths { get; set; }
+        public ResponseData Confirmed { get; set; }
+        public ResponseData Recovered { get; set; }
+        public ResponseData Deaths { get; set; }
     }
 
     class ResponseData
     {
-        public string value { get; set; }
+        public string Value { get; set; }
     }
 }

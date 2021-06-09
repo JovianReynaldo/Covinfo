@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\ZeroGo\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\ZeroGo\\.nuget\\packages"
-    ]
-  }
-}

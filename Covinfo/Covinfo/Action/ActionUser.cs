@@ -13,6 +13,7 @@ namespace Covinfo.Action
             World world = new World();
             Country country = new Country();
 
+            //set loading
             Timer worldTimer = new Timer();
             Timer countryTimer = new Timer();
             worldTimer.Interval = 1000;
@@ -20,6 +21,7 @@ namespace Covinfo.Action
             worldTimer.Elapsed += new ElapsedEventHandler(world.Loading);
             countryTimer.Elapsed += new ElapsedEventHandler(country.Loading);
 
+            //process
             worldTimer.Start();
             Response worldResult = await world.GetData();
             worldTimer.Stop();
@@ -29,13 +31,17 @@ namespace Covinfo.Action
             Response countryResult = await country.GetData();
             countryTimer.Stop();
 
-            if (worldResult != null && countryResult != null) printResult(worldResult, countryResult, "Indonesia");
+            if (worldResult != null && countryResult != null)
+            {
+                PrintResult(worldResult, countryResult, "Indonesia");
+            }
         }
         public async Task GetSpecificCovid()
         {
             World world = new World();
             Country country = new Country();
 
+            //set loading
             Timer worldTimer = new Timer();
             Timer countryTimer = new Timer();
             worldTimer.Interval = 1000;
@@ -43,9 +49,11 @@ namespace Covinfo.Action
             worldTimer.Elapsed += new ElapsedEventHandler(world.Loading);
             countryTimer.Elapsed += new ElapsedEventHandler(country.Loading);
 
+            //input negara
             Console.Write("\nNegara: ");
             string input = Console.ReadLine();
 
+            //process
             Console.Clear();
             worldTimer.Start();
             Response worldResult = await world.GetData();
@@ -56,13 +64,17 @@ namespace Covinfo.Action
             Response countryResult = await country.GetData(input);
             countryTimer.Stop();
 
-            if (worldResult != null && countryResult != null) printResult(worldResult, countryResult, input);
+            if (worldResult != null && countryResult != null)
+            {
+                PrintResult(worldResult, countryResult, input);
+            }
         }
         public async Task CompareCovid()
         {
             World world = new World();
             Country country = new Country();
 
+            //set loading
             Timer worldTimer = new Timer();
             Timer countryTimer = new Timer();
             worldTimer.Interval = 1000;
@@ -103,21 +115,23 @@ namespace Covinfo.Action
 
                     Console.Clear();
                     Console.WriteLine("Kasus Covid-19 Global: ");
-                    Console.WriteLine("- Terkonfirmasi: " + worldResult.confirmed.value);
-                    Console.WriteLine("- Sembuh: " + worldResult.recovered.value);
-                    Console.WriteLine("- Meninggal: " + worldResult.deaths.value);
+                    Console.WriteLine("- Terkonfirmasi: " + worldResult.Confirmed.Value);
+                    Console.WriteLine("- Sembuh: " + worldResult.Recovered.Value);
+                    Console.WriteLine("- Meninggal: " + worldResult.Deaths.Value);
                     Console.WriteLine();
 
                     int index = 0;
                     foreach (Response countryResult in listCountryResult)
                     {
-                        if(countryResult != null) { 
+                        if (countryResult != null)
+                        {
                             Console.WriteLine("Kasus Covid-19 " + listCountry[listCountryResult.IndexOf(countryResult)] + ": ");
-                            Console.WriteLine("- Terkonfirmasi: " + countryResult.confirmed.value);
-                            Console.WriteLine("- Sembuh: " + countryResult.recovered.value);
-                            Console.WriteLine("- Meninggal: " + countryResult.deaths.value);
+                            Console.WriteLine("- Terkonfirmasi: " + countryResult.Confirmed.Value);
+                            Console.WriteLine("- Sembuh: " + countryResult.Recovered.Value);
+                            Console.WriteLine("- Meninggal: " + countryResult.Deaths.Value);
                             Console.WriteLine();
-                        } else
+                        }
+                        else
                         {
                             Console.WriteLine("Tidak dapat menemukan negara " + listCountry[index]);
                             Console.WriteLine();
@@ -125,7 +139,7 @@ namespace Covinfo.Action
                         index++;
                     }
                 }
-                else if(count <= 1)
+                else if (count <= 1)
                 {
                     Console.Write("Minimal 2 negara");
                     Console.ReadLine();
@@ -143,18 +157,18 @@ namespace Covinfo.Action
                 Console.WriteLine(e.Message);
             }
         }
-        public void printResult(Response worldResult, Response countryResult, String country)
+        public void PrintResult(Response worldResult, Response countryResult, String country)
         {
             Console.Clear();
             Console.WriteLine("Kasus Covid-19 Global: ");
-            Console.WriteLine("- Terkonfirmasi: " + worldResult.confirmed.value);
-            Console.WriteLine("- Sembuh: " + worldResult.recovered.value);
-            Console.WriteLine("- Meninggal: " + worldResult.deaths.value);
+            Console.WriteLine("- Terkonfirmasi: " + worldResult.Confirmed.Value);
+            Console.WriteLine("- Sembuh: " + worldResult.Recovered.Value);
+            Console.WriteLine("- Meninggal: " + worldResult.Deaths.Value);
             Console.WriteLine();
             Console.WriteLine("Kasus Covid-19 " + country + ": ");
-            Console.WriteLine("- Terkonfirmasi: " + countryResult.confirmed.value);
-            Console.WriteLine("- Sembuh: " + countryResult.recovered.value);
-            Console.WriteLine("- Meninggal: " + countryResult.deaths.value);
+            Console.WriteLine("- Terkonfirmasi: " + countryResult.Confirmed.Value);
+            Console.WriteLine("- Sembuh: " + countryResult.Recovered.Value);
+            Console.WriteLine("- Meninggal: " + countryResult.Deaths.Value);
             Console.WriteLine();
         }
 

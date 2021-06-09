@@ -17,7 +17,7 @@ namespace Covinfo
                 Console.WriteLine("\nMenu: ");
                 Console.WriteLine("1. Lihat Kasus Covid-19");
                 Console.WriteLine("2. CovBot (Bot informasi Covid-19)");
-                Console.WriteLine(!ActionAdmin.adminStatus ? "3. Masuk sebagai admin" : "3. Menu admin");
+                Console.WriteLine(!ActionAdmin.AdminStatus ? "3. Masuk sebagai admin" : "3. Menu admin");
                 Console.WriteLine("4. exit");
                 Console.Write("\nPilihan: ");
 
@@ -35,7 +35,7 @@ namespace Covinfo
                             actionUser.Bot();
                             break;
                         case 3:
-                            if (!ActionAdmin.adminStatus) actionAdmin.LoginAdmin(); else MenuAdmin();
+                            if (!ActionAdmin.AdminStatus) actionAdmin.LoginAdmin(); else MenuAdmin();
                             break;
                         case 4:
                             goto exit;
@@ -51,7 +51,7 @@ namespace Covinfo
                     Console.ReadLine();
                 }
             }
-            exit:;
+        exit:;
         }
 
         public static void MenuAdmin()
@@ -135,7 +135,7 @@ namespace Covinfo
                             goto exit;
                         default:
                             Console.WriteLine("Harap pilih menu yang tersedia");
-                            Console.ReadLine();
+                            _ = Console.ReadLine();
                             break;
                     }
                 }
@@ -144,7 +144,7 @@ namespace Covinfo
                     Console.WriteLine(e.Message);
                 }
             }
-            exit:;
+        exit:;
         }
 
 
