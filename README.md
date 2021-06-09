@@ -29,6 +29,7 @@ NB: Untuk menggunakan fitur Covid-19 API, pastikan komputer terhubung dengan int
 default:
 - username: admin
 - password: 123
+
 ![Screenshot3](https://user-images.githubusercontent.com/55451337/121402514-2e06dd80-c984-11eb-8c54-a6715b1c5dfc.PNG)
 
 
